@@ -1,0 +1,17 @@
+version: "3"
+services:
+  database:
+    image: postgres:14.3
+    restart: always
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready", "-d", "db_prod" ]
+    environment:
+      POSTGRES_DB: "stackexchange"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+volumes:
+  dbdata:

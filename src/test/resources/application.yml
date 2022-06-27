@@ -1,0 +1,9 @@
+wiremock:
+  url: "http://localhost:${wiremock.server.port}"
+stackExchange:
+  url: ${wiremock.url}
+test:
+  enabled: true
+spring:
+  datasource:
+    url: "jdbc:tc:postgresql://localhost:5432/stackexchange"

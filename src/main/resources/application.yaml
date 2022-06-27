@@ -1,0 +1,15 @@
+stackExchange:
+  url: "https://api.stackexchange.com/2.3"
+  questions: "/questions/featured?pagesize={pagesize}&order={order}&sort={sort}&site={site}"
+  users: "/users/{id}?site={site}"
+test:
+  enabled: false
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/stackexchange"
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
